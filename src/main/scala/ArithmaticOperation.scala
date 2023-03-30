@@ -9,8 +9,8 @@ class ArithmaticOperation {
   def operations[A:Numeric](listOfOptions: List[Option[A]], operationsType: String): A = {
     if (listOfOptions.isEmpty) throw new NoSuchElementException() //throw exceptions
     val result = for {
-      n1 <- listOfOptions.flatten(f => f)
-    } yield n1
+      value <- listOfOptions.flatten(value => value)
+    } yield value
 
     //match the type of operation to perform different operations
     operationsType match {
